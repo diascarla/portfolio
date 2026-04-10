@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+:root {
+  /* Valores para Light Mode */
+  --bg-page: #FAFAFA;
+  --bg-card: #FFFFFF;
+  --text-page: #2D2D2D;
+  --text-muted: #666666;
+  --scrollbar-thumb: #AC1754;
+  --border-color: #E5E7EB;
+}
+
+.dark {
+  /* Valores para Dark Mode */
+  --bg-page: #0a0a0ae0;      /* Preto profundo para destacar o rosa */
+  --bg-card: #171717;      /* Cinza grafite para elementos elevados */
+  --text-page: #F5F5F5;    /* Texto quase branco */
+  --text-muted: #A3A3A3;   /* Texto secundário discreto */
+  --scrollbar-thumb: #F37199; /* Rosa mais suave para não cansar a vista no escuro */
+  --border-color: #262626;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Agora as cores do Tailwind usam as variáveis que mudam */
+  --color-soft-bg: var(--bg-page);
+  --color-card-bg: var(--bg-card);
+  --color-main-text: var(--text-page);
+  --color-muted-text: var(--text-muted);
+  --color-border-subtle: var(--border-color);
+
+  --color-neon-blue: #00ffff;
+  /* Azul neon para fundos e destaques */
+  --color-brand-deep: #AC1754;
+  /* O rosa mais escuro/vinho */
+  --color-brand-pink: #E53888;
+  /* Rosa principal vibrante */
+  --color-brand-soft: #F37199;
+  /* Rosa médio para detalhes e fundos/hovers*/
+  --color-brand-light: #F7A8C4;
+  /* Rosa clarinho */
+
+  --animate-spin-slow: spin 15s linear infinite;
+  --animate-fade-in: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  background-color: var(--color-soft-bg);
+  color: var(--color-main-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+@layer base {
+  /* Largura da barra */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  /* Fundo da barra (invisível) */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* O indicador de rolagem */
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 10px;
+    opacity: 0.5;
+  }
+
+  /* Quando você passa o mouse ou arrasta, ela ganha cor */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #E53888; /* Muda para o rosa vibrante no hover */
+  }
+}
+
+/* Suporte para Firefox (que usa propriedades diferentes) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}
