@@ -16,7 +16,7 @@
   --bg-card: #171717;      /* Cinza grafite para elementos elevados */
   --text-page: #F5F5F5;    /* Texto quase branco */
   --text-muted: #A3A3A3;   /* Texto secundário discreto */
-  --scrollbar-thumb: #F37199; /* Rosa mais suave para não cansar a vista no escuro */
+  --scrollbar-thumb: var(--color-brand-pink); /* Rosa mais suave para não cansar a vista no escuro */
   --border-color: #262626;
 }
 

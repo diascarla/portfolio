@@ -2,7 +2,10 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-900 to-transparent flex justify-between items-center max-w-6xl mx-auto px-6 h-20">
+    <footer
+      className="w-full bg-gradient-to-r from-transparent 
+    via-border-subtle to-transparent flex justify-between items-center max-w-6xl mx-auto px-6 h-20"
+    >
       <div>
         <p className="text-main-text text-sm font-sans font-medium tracking-widest">
           © {currentYear} Carla Dias
@@ -26,10 +29,22 @@ export const Footer = () => {
       <div>
         <ul className="flex gap-8 text-main-text font-sans font-medium tracking-widest text-sm">
           <li className="hover:text-brand-soft transition-colors">
-            <a href="https://github.com/diascarla" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a
+              href="https://github.com/diascarla"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
           </li>
           <li className="hover:text-brand-soft transition-colors">
-            <a href="https://www.linkedin.com/in/devcarladias/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a
+              href="https://www.linkedin.com/in/devcarladias/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
           </li>
         </ul>
       </div>
