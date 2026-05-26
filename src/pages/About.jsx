@@ -1,10 +1,9 @@
-import fotoPerfil from "../assets/foto.png";
+import { LuSparkles } from "react-icons/lu";
+import fotoPerfil from "../assets/fotoPerfil.png";
 import { Button } from "../components/Button/index";
 import { SkillPill } from "../components/UI/SkillPill";
-import { LuSparkles } from "react-icons/lu";
 import { educationData } from "../data/educationData";
 import { pillarsData } from "../data/pillarsData";
-import { LuCpu, LuCompass, LuPenTool } from "react-icons/lu"
 
 export const About = () => {
 
@@ -12,10 +11,11 @@ export const About = () => {
         <section className="min-h-[90vh] bg-soft-bg flex flex-col justify-center items-center px-6 py-20">
             <div className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
-                    <img src={fotoPerfil} alt="Imagem de Sobre" className="w-full h-auto object-cover rounded-2xl shadow-xl" />
+                    <img src={fotoPerfil} alt="Imagem de Sobre" className="w-full h-auto drop-shadow-2xl bg-transparent block" />
                 </div>
                 <div className="flex flex-col items-start gap-6">
-                    <SkillPill icon={<LuSparkles size={16} />} name="Desenvolvedora & Designer" />                    <h1 className="text-3xl md:text-5xl font-bold text-main-text">
+                    <SkillPill icon={<LuSparkles size={16} />} name="Desenvolvedora & Designer" />                    
+                    <h1 className="text-3xl md:text-5xl font-bold text-main-text">
                         Do artesanato à Engenharia de Software
                     </h1>
                     <p className="text-muted-text text-lg leading-relaxed">
