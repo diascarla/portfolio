@@ -21,15 +21,17 @@ export const About = () => {
                     <p className="text-muted-text text-lg leading-relaxed">
                         Minha trajetória sempre foi guiada pelo cuidado com o detalhe e pela busca pela harmonia visual. Com anos de experiência nos setores de estética e artesanato, desenvolvi uma percepção aguda para simetria, proporção e a experiência do cliente — competências que hoje transponho para a Engenharia de Software na USP. Como desenvolvedora com foco em UX/UI, utilizo essa bagagem para projetar interfaces que não são apenas funcionais, mas esteticamente impecáveis e centradas na jornada humana.
                     </p>
-                    <div className="flex sm:flex-row gap-4 ">
+                    
+                </div>
+
+                <div className="flex sm:flex-row gap-4 ">
                         <Button variant="secondary" onClick={() => window.open("https://drive.google.com/file/d/1xkfjftP6427_OtrM3f-EtWbFpq04fQyD/view?usp=drive_link", "_blank", "noreferrer")}>
                             Baixar CV
                         </Button>
-                        <Button onClick={() => window.open("https://www.linkedin.com/in/devcarladias/", "_blank", "noreferrer")}>
+                        <Button onClick={() => window.open("https://wa.me/5511979658956?text=Ol%C3%A1%2C%20Carla!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar.", "_blank", "noopener noreferrer")}>
                             Vamos conversar?
                         </Button>
                     </div>
-                </div>
             </div>
 
             {/* Seção de Trajetória Acadêmica */}

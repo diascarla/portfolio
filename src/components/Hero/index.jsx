@@ -25,6 +25,10 @@ export const Hero = () => {
                     Disponível para novos projetos
                 </span>
 
+                <h2 className="text-2xl md:text-3xl font-medium text-main-text mb-4">
+                    Olá, eu sou a Carla Dias!
+                </h2>
+
                 {/* Título Principal */}
                 <h1 className="text-4xl md:text-6xl font-light text-main-text tracking-[0.05em] mb-6">
                     &lt; DESENVOLVEDORA <br className="md:hidden" />

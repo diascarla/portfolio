@@ -4,9 +4,15 @@ import { About } from "./pages/About";
 import { Projects } from "./pages/Projects";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import { useEffect } from "react";
+import ReactGA from "react-ga4";
 
 function App() {
-  
+  useEffect(() => {
+    // Envia a visualização da página atual sempre que o App carrega
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+  }, []);
+
   return (
     <BrowserRouter>
       {/* A Header fica fora das Routes para aparecer em todas as páginas */}

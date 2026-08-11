@@ -1,8 +1,8 @@
 import { projects } from "../../data/projects";
 import { ProjectCard } from "../ProjectCard";
 
-export const Projects = () => {
-    const featuredProjects = projects.filter((project) => project.featured);
+export const ProjectsSection = () => {
+    const featuredProjects = projects.filter((project) => project.featured).slice(0, 3);
 
     return (
         < section className="relative py-20 px-6 overflow-hidden bg-soft-bg" >
@@ -17,6 +17,12 @@ export const Projects = () => {
                 {featuredProjects.map((project) => (
                     <ProjectCard key={project.id} {...project} />
                 ))}
+            </div>
+
+            <div className=" mt-12 text-center">
+                <a href="/projects" className="inline-flex items-center text-lg font-medium text-main-text hover:text-brand-soft">
+                    Ver mais Projetos <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                </a>
             </div>
         </section >
     )

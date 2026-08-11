@@ -1,6 +1,6 @@
 export const ProjectCard = ({ title, description, tags, link, image }) => {
   return (
-    <div className="group relative rounded-3xl border border-border-subtle 
+    <div className="group relative rounded-3xl border border-border-subtle
                     bg-white/10 dark:bg-black/10 backdrop-blur-md 
                     shadow-sm transition-all duration-300  overflow-hidden hover:border-brand-deep/30 
                     hover:shadow-[0_0_15px_rgba(229,56,136,0.3)] dark:hover:shadow-[0_0_20px_rgba(229,56,136,0.4)]">
