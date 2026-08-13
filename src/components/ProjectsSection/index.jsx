@@ -6,9 +6,7 @@ export const ProjectsSection = () => {
 
     return (
         < section className="relative py-20 px-6 overflow-hidden bg-soft-bg" >
-            {/* Círculo de cor decorativo atrás dos cards */}
-            < div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-brand-light/30 rounded-full blur-[100px] -z-10" />
-            <h2 className="text-3xl font-bold mb-12 text-center text-brand-pink">
+            <h2 className="text-3xl font-bold mb-12 text-center text-brand-deep">
                 Projetos em Destaque
             </h2>
 
@@ -19,8 +17,8 @@ export const ProjectsSection = () => {
                 ))}
             </div>
 
-            <div className=" mt-12 text-center">
-                <a href="/projects" className="inline-flex items-center text-lg font-medium text-main-text hover:text-brand-soft">
+            <div className=" mt-12 text-center ">
+                <a href="/projects" className="inline-flex items-center text-lg font-medium text-main-text text-hover text-hover-scale group ">
                     Ver mais Projetos <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
                 </a>
             </div>

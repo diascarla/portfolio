@@ -1,9 +1,6 @@
 export const ProjectCard = ({ title, description, tags, link, image }) => {
   return (
-    <div className="group relative rounded-3xl border border-border-subtle
-                    bg-white/10 dark:bg-black/10 backdrop-blur-md 
-                    shadow-sm transition-all duration-300  overflow-hidden hover:border-brand-deep/30 
-                    hover:shadow-[0_0_15px_rgba(229,56,136,0.3)] dark:hover:shadow-[0_0_20px_rgba(229,56,136,0.4)]">
+    <div className="group relative card-hover rounded-3xl overflow-hidden">
 
       {/* Container do GIF */}
       <div className="w-full h-48 overflow-hidden bg-gray-200/20">
@@ -18,13 +15,13 @@ export const ProjectCard = ({ title, description, tags, link, image }) => {
       <div className="p-8">
         <div className="flex gap-3 mb-4 flex-wrap">
           {tags.map((tag, i) => (
-            <span key={i} className="text-[11px] uppercase tracking-widest text-brand-pink font-bold">
+            <span key={i} className="text-[11px] uppercase tracking-widest text-brand-soft font-bold">
               {tag}
             </span>
           ))}
         </div>
 
-        <h3 className="text-2xl font-semibold mb-3 text-main-text hover:text-brand-soft transition-colors text-center">
+        <h3 className="text-2xl font-semibold mb-3 text-main-text hover:text-brand-deep transition-colors text-center">
           {title}
         </h3>
 
@@ -32,7 +29,7 @@ export const ProjectCard = ({ title, description, tags, link, image }) => {
           {description}
         </p>
 
-        <a href={link} className="inline-flex items-center text-sm font-medium text-main-text hover:text-brand-soft">
+        <a href={link} className="inline-flex items-center text-sm font-medium text-main-text text-hover text-hover-scale">
           Ver detalhes <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
         </a>
       </div>

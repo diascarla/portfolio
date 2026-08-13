@@ -10,10 +10,9 @@ export const Header = () => {
       <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center">
           <Logo className="w-10 h-10" />{" "}
-          {/* Garanta que o Logo receba classes de tamanho */}
         </Link>
 
-        <div className="flex flex-row items-center gap-8 text-sm font-medium text-main-text">
+        <div className="flex flex-row items-center gap-8 text-sm font-sans text-main-text">
           <Link
             title="Início"
             to="/"

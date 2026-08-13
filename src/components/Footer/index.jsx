@@ -18,7 +18,7 @@ export const Footer = () => {
             {/* Círculo que pulsa (Animação Ping) */}
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-soft opacity-75"></span>
             {/* Círculo fixo no centro */}
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-pink"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-deep"></span>
           </span>
 
           <span className="text-xs font-medium tracking-wide text-main-text uppercase">

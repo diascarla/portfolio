@@ -7,7 +7,7 @@ export const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="cursor-pointer p-2 rounded-full "
+      className="cursor-pointer p-2 hover:text-brand-soft transition-colors"
     >
       {theme === "light" ? <MoonIcon /> : <SunIcon />}
     </button>

@@ -31,30 +31,32 @@ export const Projects = () => {
         <section className="w-full min-h-screen bg-soft-bg transition-colors duration-300">
             <div className="max-w-6xl mx-auto px-6 pt-32 pb-20 text-left">
                 {/* Cabeçalho da Página */}
-                <div className="mb-20">
-                    <h2 className="text-3xl md:text-4xl font-bold text-main-text mb-4">
-                        Meus Projetos
-                    </h2>
-                    <p className="text-muted-text max-w-xl leading-relaxed">
-                        Uma seleção de aplicações onde aplico engenharia de software robusta,
-                        arquitetura limpa e design centrado na experiência do usuário.
-                    </p>
-                </div>
+                
+                    <div className="max-w-6xl mx-auto gap-8 mb-20">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-brand-deep">
+                            Meus Projetos
+                        </h2>
+                        <p className="text-main-text opacity-80 text-lg leading-relaxed mb-6">
+                            Uma seleção de aplicações onde aplico engenharia de software robusta,
+                            arquitetura limpa e design centrado na experiência do usuário.
+                        </p>
+                    </div>
 
-                {/* Filtro de pesquisa */}
-                <div className="mb-10 flex flex-col items-center gap-4">
-                    <label className="block text-sm font-medium text-main-text mb-2" htmlFor="project-search">
-                        Buscar por tecnologia ou nome
-                    </label>
-                    <input
-                        id="project-search"
-                        type="text"
-                        value={searchTerm}
-                        onChange={(event) => setSearchTerm(event.target.value)}
-                        placeholder="Ex: React, TypeScript, Node.js"
-                        className="w-full rounded-xl border border-brand-deep/20 px-4 py-3 text-sm text-main-text shadow-sm outline-none transition focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20"
-                    />
-                </div>
+                    {/* Filtro de pesquisa */}
+                    <div className="mb-10 flex flex-col items-center gap-4">
+                        <label className="text-xs font-semibold uppercase tracking-widest text-main-text">
+                            Buscar por tecnologia ou nome
+                        </label>
+                        <input
+                            id="project-search"
+                            type="text"
+                            value={searchTerm}
+                            onChange={(event) => setSearchTerm(event.target.value)}
+                            placeholder="Ex: React, TypeScript, Node.js"
+                            className="w-full rounded-xl px-4 py-3 text-sm text-main-text outline-none transition card-hover"
+                        />
+                    </div>
+                
 
                 {/* Lista de Projetos Alternados */}
                 <div className="flex flex-col gap-32">
@@ -91,10 +93,10 @@ export const Projects = () => {
 
                                     {/* Coluna do Conteúdo (Texto) */}
                                     <div className="w-full md:w-1/2 flex flex-col items-start gap-4">
-                                        <span className="text-xs font-semibold uppercase tracking-widest text-brand-pink">
+                                        <span className="text-xs font-semibold uppercase tracking-widest text-main-text">
                                             {project.subtitle}
                                         </span>
-                                        <h3 className="text-2xl md:text-3xl font-bold text-main-text tracking-tight">
+                                        <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-brand-deep">
                                             {project.title}
                                         </h3>
                                         <p className="text-muted-text text-base leading-relaxed mt-2">
@@ -106,7 +108,7 @@ export const Projects = () => {
                                             {project.tags.map((tag, idx) => (
                                                 <span
                                                     key={idx}
-                                                    className="px-3 py-1 text-xs font-medium rounded-full border border-brand-deep/10 dark:border-white/5 bg-soft-bg text-muted-text"
+                                                    className="px-3 py-1 text-xs font-medium rounded-full border border-brand-deep/10 dark:border-white/5 bg-soft-bg text-brand-pink"
                                                 >
                                                     {tag}
                                                 </span>
@@ -119,7 +121,7 @@ export const Projects = () => {
                                                 href={project.link}
                                                 target="_blank"
                                                 rel="noreferrer"
-                                                className="flex items-center gap-2 text-sm font-semibold text-main-text hover:text-brand-pink transition-colors duration-300 "
+                                                className="flex items-center gap-2 text-sm font-semibold text-main-text text-hover text-hover-scale"
                                             >
                                                 <LuGithub size={18} /> Code
                                             </a>
@@ -127,7 +129,7 @@ export const Projects = () => {
                                                 href={project.deploy}
                                                 target="_blank"
                                                 rel="noreferrer"
-                                                className="flex items-center gap-2 text-sm font-semibold text-brand-pink hover:opacity-80 transition-opacity duration-300"
+                                                className="flex items-center gap-2 text-sm font-semibold text-brand-pink text-hover text-hover-scale"
                                             >
                                                 <LuExternalLink size={18} /> Live Demo
                                             </a>
@@ -148,7 +150,7 @@ export const Projects = () => {
                     href="https://github.com/diascarla"
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-brand-pink hover:opacity-80 transition-opacity duration-300"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-brand-pink text-hover text-hover-scale"
                 >
                     <LuGithub size={18} /> Veja meu perfil completo no GitHub
                 </a>

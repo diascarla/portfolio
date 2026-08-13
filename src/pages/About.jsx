@@ -9,22 +9,20 @@ export const About = () => {
 
     return (
         <section className="min-h-[90vh] bg-soft-bg flex flex-col justify-center items-center px-6 py-20">
+
             <div className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
                     <img src={fotoPerfil} alt="Imagem de Sobre" className="w-full h-auto drop-shadow-2xl bg-transparent block" />
                 </div>
                 <div className="flex flex-col items-start gap-6">
-                    <SkillPill icon={<LuSparkles size={16} />} name="Desenvolvedora & Designer" />                    
+                    <SkillPill icon={<LuSparkles size={16} />} name="Desenvolvedora & Designer" />
                     <h1 className="text-3xl md:text-5xl font-bold text-main-text">
                         Do artesanato à Engenharia de Software
                     </h1>
                     <p className="text-muted-text text-lg leading-relaxed">
                         Minha trajetória sempre foi guiada pelo cuidado com o detalhe e pela busca pela harmonia visual. Com anos de experiência nos setores de estética e artesanato, desenvolvi uma percepção aguda para simetria, proporção e a experiência do cliente — competências que hoje transponho para a Engenharia de Software na USP. Como desenvolvedora com foco em UX/UI, utilizo essa bagagem para projetar interfaces que não são apenas funcionais, mas esteticamente impecáveis e centradas na jornada humana.
                     </p>
-                    
-                </div>
-
-                <div className="flex sm:flex-row gap-4 ">
+                    <div className="flex justify-center m-5 sm:flex-row gap-4 ">
                         <Button variant="secondary" onClick={() => window.open("https://drive.google.com/file/d/1xkfjftP6427_OtrM3f-EtWbFpq04fQyD/view?usp=drive_link", "_blank", "noreferrer")}>
                             Baixar CV
                         </Button>
@@ -32,16 +30,19 @@ export const About = () => {
                             Vamos conversar?
                         </Button>
                     </div>
-            </div>
+                </div>
 
+
+
+            </div>
             {/* Seção de Trajetória Acadêmica */}
             <div className="w-full max-w-4xl mx-auto px-6 mt-32 text-left">
-                <h2 className="text-2xl md:text-3xl font-bold text-main-text mb-12">
+                <h2 className="text-2xl md:text-3xl font-bold text-brand-deep mb-12">
                     Trajetória Acadêmica
                 </h2>
 
                 {/* O Container da Linha do Tempo */}
-                <div className="relative border-l-2 border-brand-deep/20 ml-4 md:ml-6 flex flex-col gap-12">
+                <div className="relative border-l-2 border-brand-pink/20 ml-4 md:ml-6 flex flex-col gap-12">
                     {educationData.map((item) => (
                         <div key={item.id} className="relative pl-8 group">
                             <div className="
@@ -52,16 +53,16 @@ export const About = () => {
                                 w-5 h-5 rounded-full border-2 
   
                                 /* 3. Cores padrão (Combinando com seu index.css) */
-                                bg-[var(--bg-card)] border-brand-deep/40 transition-all duration-300
+                                bg-[var(--bg-card)] border-brand-pink/40 transition-all duration-300
   
                                 /* 4. Efeito de Hover (Interatividade de UI) */
-                                group-hover:border-brand-pink 
-                                group-hover:bg-brand-pink
+                                group-hover:border-brand-deep 
+                                group-hover:bg-brand-deep
                                 group-hover:shadow-[0_0_12px_rgba(229,56,136,0.5)]" />
 
                             <div className="flex flex-col gap-1 transition-all duration-300 group-hover:translate-x-1">
                                 {/* Ano / Período */}
-                                <span className="text-sm font-semibold text-brand-pink/90 tracking-wider uppercase">
+                                <span className="text-sm font-semibold text-brand-soft/90 tracking-wider uppercase">
                                     {item.year}
                                 </span>
 
@@ -87,7 +88,7 @@ export const About = () => {
 
             {/* Seção Pilares de Atuação */}
             <section className="w-full max-w-4xl mx-auto px-6 mt-32 text-left">
-                <h2 className="text-2xl md:text-3xl font-bold text-main-text mb-12">
+                <h2 className="text-2xl md:text-3xl font-bold text-brand-deep mb-12">
                     Como eu transformo ideias em código
                 </h2>
 
@@ -103,7 +104,7 @@ export const About = () => {
                                     <IconComponent size={26} />
                                 </div>
 
-                                <h3 className="text-lg font-bold text-main-text tracking-tight group-hover:translate-x-0.5 transition-transform duration-300">
+                                <h3 className="text-lg font-bold text-main-text tracking-tight group-hover:translate-x-0.5 duration-300 transition-colors group-hover:text-brand-pink">
                                     {pilar.title}
                                 </h3>
                                 <p className="text-muted-text text-sm leading-relaxed">
