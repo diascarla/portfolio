@@ -1,67 +1,96 @@
 @import "tailwindcss";
 
 :root {
-  /* Valores para Light Mode */
-  --bg-page: #FAFAFA;
-  --bg-card: #FFFFFF;
-  --text-page: #2D2D2D;
-  --text-muted: #666666;
-  --scrollbar-thumb: #AC1754;
-  --border-color: #E5E7EB;
-  --highlighted-text-light: #F37199;
+  --bg-page: #f8f4f6;
+  --bg-card: #ffffff;
+  --text-page: #1f1f1f;
+  --text-muted: #4a4a4a;
+  --border-color: #e8dfe6;
+  --brand-deep: #ac1754;
+  --brand-pink: #e53888;
+  --brand-soft: #f37199;
+  --brand-accent: #d5267e;
+  --focus-ring: #1d4ed8;
+  --shadow-soft: rgba(172, 23, 84, 0.12);
 }
 
 .dark {
-  /* Valores para Dark Mode */
-  --bg-page: #0a0a0ae0;      /* Preto profundo para destacar o rosa */
-  --bg-card: #171717;      /* Cinza grafite para elementos elevados */
-  --text-page: #F5F5F5;    /* Texto quase branco */
-  --text-muted: #A3A3A3;   /* Texto secundário discreto */
-  --scrollbar-thumb: var(--color-brand-pink); /* Rosa mais suave para não cansar a vista no escuro */
-  --border-color: #262626;
-  --highlighted-text-dark: #F7A8C4;
+  --bg-page: #120f14;
+  --bg-card: #1a171d;
+  --text-page: #f5f5f5;
+  --text-muted: #d4d4d8;
+  --border-color: #2c2630;
+  --brand-deep: #f5bfd5;
+  --brand-pink: #ff7ab8;
+  --brand-soft: #ffc4dc;
+  --brand-accent: #ff7ab8;
+  --focus-ring: #93c5fd;
+  --shadow-soft: rgba(255, 122, 184, 0.18);
 }
 
 @layer utilities {
+  .section-shell {
+    @apply mx-auto max-w-6xl px-6;
+  }
+
+  .section-copy {
+    @apply text-base leading-relaxed text-[color:var(--text-muted)] md:text-lg;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center rounded-full border border-brand-pink/20 bg-brand-soft/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-[color:var(--text-page)];
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-soft/40;
+  }
+
   .card-hover {
-    @apply border transition-all duration-300 text-main-text border-brand-deep/30;
+    @apply border border-brand-deep/20 transition-all duration-300;
     background-color: var(--bg-card);
+    color: var(--text-page);
   }
 
   .card-hover:hover {
-    @apply border-brand-deep text-brand-deep;
-    box-shadow: 0 0 25px rgba(229, 56, 136, 0.35), 0 8px 30px rgba(0, 0, 0, 0.08);
+    @apply border-brand-deep;
+    box-shadow: 0 0 20px rgba(229, 56, 136, 0.18), 0 10px 28px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
   }
 
   .dark .card-hover:hover {
-    box-shadow: 0 0 30px rgba(229, 56, 136, 0.45), 0 10px 35px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 20px rgba(255, 122, 184, 0.2), 0 10px 30px rgba(0, 0, 0, 0.12);
   }
 
   .button-hover {
-    @apply transition-all duration-300 border border-brand-deep/30;
+    @apply transition-all duration-200 border border-brand-deep/30;
     box-shadow: 0 0 0 transparent;
   }
+
   .button-hover:hover {
     @apply border-brand-deep;
-    box-shadow: 0 0 25px rgba(229, 56, 136, 0.35), 0 10px 30px rgba(229, 56, 136, 0.15);
-    transform: translateY(-0.125rem);
+    box-shadow: 0 0 20px rgba(229, 56, 136, 0.18), 0 8px 22px rgba(229, 56, 136, 0.12);
+    transform: translateY(-1px);
   }
+
   .dark .button-hover:hover {
-    box-shadow: 0 0 30px rgba(229, 56, 136, 0.5), 0 12px 35px rgba(229, 56, 136, 0.2);
+    box-shadow: 0 0 20px rgba(255, 122, 184, 0.2), 0 8px 24px rgba(255, 122, 184, 0.12);
   }
 
   .text-hover {
-    @apply text-main-text transition-colors duration-300;
+    @apply transition-colors duration-200;
+    color: var(--text-page);
   }
+
   .text-hover:hover {
-    @apply text-brand-deep duration-300 opacity-80 transition-all;
+    color: var(--brand-deep);
   }
 
   .text-hover-scale {
-    @apply transition-transform duration-300;
+    @apply transition-transform duration-200;
   }
+
   .text-hover-scale:hover {
-    @apply scale-102 -translate-y-1;
+    @apply -translate-y-0.5;
   }
 }
 
@@ -73,17 +102,13 @@
   --color-main-text: var(--text-page);
   --color-muted-text: var(--text-muted);
   --color-border-subtle: var(--border-color);
+  --color-focus-ring: var(--focus-ring);
 
   --color-neon-blue: #00ffff;
-  /* Azul neon para fundos e destaques */
-  --color-brand-deep: #AC1754;
-  /* O rosa mais escuro/vinho */
-  --color-brand-pink: #E53888;
-  /* Rosa principal vibrante */
-  --color-brand-soft: #F37199;
-  /* Rosa médio para detalhes e fundos/hovers*/
-  --color-brand-light: #F7A8C4;
-  /* Rosa clarinho */
+  --color-brand-deep: #ac1754;
+  --color-brand-pink: #e53888;
+  --color-brand-soft: #f37199;
+  --color-brand-light: #f7a8c4;
 
   --animate-spin-slow: spin 15s linear infinite;
   --animate-fade-in: fadeIn 0.8s ease-out forwards;
@@ -107,40 +132,90 @@
   }
 }
 
-body {
-  background-color: var(--color-soft-bg);
-  color: var(--color-main-text);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
-/* Custom Scrollbar */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-page);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+span,
+li,
+a,
+button,
+input {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: rgba(229, 56, 136, 0.2);
+}
+
 @layer base {
-  /* Largura da barra */
   ::-webkit-scrollbar {
     width: 6px;
   }
 
-  /* Fundo da barra (invisível) */
   ::-webkit-scrollbar-track {
     background: transparent;
   }
 
-  /* O indicador de rolagem */
   ::-webkit-scrollbar-thumb {
     background: var(--scrollbar-thumb);
     border-radius: 10px;
-    opacity: 0.5;
   }
 
-  /* Quando você passa o mouse ou arrasta, ela ganha cor */
   ::-webkit-scrollbar-thumb:hover {
-    background: #E53888; /* Muda para o rosa vibrante no hover */
+    background: var(--brand-pink);
   }
 }
 
-/* Suporte para Firefox (que usa propriedades diferentes) */
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

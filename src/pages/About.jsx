@@ -1,83 +1,73 @@
 import { LuSparkles } from "react-icons/lu";
 import fotoPerfil from "../assets/fotoPerfil.png";
-import { Button } from "../components/Button/index";
-import { SkillPill } from "../components/UI/SkillPill";
+import { Button } from "../components/Button/Button";
+import { SkillPill } from "../components/shared/SkillPill";
 import { educationData } from "../data/educationData";
 import { pillarsData } from "../data/pillarsData";
 
 export const About = () => {
-
     return (
-        <section className="min-h-[90vh] bg-soft-bg flex flex-col justify-center items-center px-6 py-20">
-
-            <div className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <img src={fotoPerfil} alt="Imagem de Sobre" className="w-full h-auto drop-shadow-2xl bg-transparent block" />
+        <section className="flex min-h-[90vh] flex-col items-center justify-center bg-soft-bg px-6 py-20">
+            <div className="section-shell grid grid-cols-1 gap-12 md:grid-cols-2">
+                <div className="flex items-center justify-center">
+                    <img
+                        src={fotoPerfil}
+                        alt="Retrato profissional de Carla Dias"
+                        className="block h-auto w-full max-w-[480px] rounded-[2rem] bg-transparent drop-shadow-2xl"
+                    />
                 </div>
+
                 <div className="flex flex-col items-start gap-6">
                     <SkillPill icon={<LuSparkles size={16} />} name="Desenvolvedora & Designer" />
-                    <h1 className="text-3xl md:text-5xl font-bold text-main-text">
+                    <h1 className="text-3xl font-bold tracking-tight text-[color:var(--text-page)] md:text-5xl">
                         Do artesanato à Engenharia de Software
                     </h1>
-                    <p className="text-muted-text text-lg leading-relaxed">
+                    <p className="text-lg leading-relaxed text-[color:var(--text-muted)]">
                         Minha trajetória sempre foi guiada pelo cuidado com o detalhe e pela busca pela harmonia visual. Com anos de experiência nos setores de estética e artesanato, desenvolvi uma percepção aguda para simetria, proporção e a experiência do cliente — competências que hoje transponho para a Engenharia de Software na USP. Como desenvolvedora com foco em UX/UI, utilizo essa bagagem para projetar interfaces que não são apenas funcionais, mas esteticamente impecáveis e centradas na jornada humana.
                     </p>
-                    <div className="flex justify-center m-5 sm:flex-row gap-4 ">
-                        <Button variant="secondary" onClick={() => window.open("https://drive.google.com/file/d/1xkfjftP6427_OtrM3f-EtWbFpq04fQyD/view?usp=drive_link", "_blank", "noreferrer")}>
+
+                    <div className="mt-2 flex flex-col justify-center gap-4 sm:flex-row">
+                        <Button
+                            aria-label="Baixar currículo"
+                            variant="secondary"
+                            onClick={() => window.open("https://drive.google.com/file/d/1xkfjftP6427_OtrM3f-EtWbFpq04fQyD/view?usp=drive_link", "_blank", "noreferrer")}
+                        >
                             Baixar CV
                         </Button>
-                        <Button onClick={() => window.open("https://wa.me/5511979658956?text=Ol%C3%A1%2C%20Carla!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar.", "_blank", "noopener noreferrer")}>
+                        <Button
+                            aria-label="Enviar mensagem pelo WhatsApp"
+                            onClick={() => window.open("https://wa.me/5511979658956?text=Ol%C3%A1%2C%20Carla!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar.", "_blank", "noopener noreferrer")}
+                        >
                             Vamos conversar?
                         </Button>
                     </div>
                 </div>
-
-
-
             </div>
-            {/* Seção de Trajetória Acadêmica */}
-            <div className="w-full max-w-4xl mx-auto px-6 mt-32 text-left">
-                <h2 className="text-2xl md:text-3xl font-bold text-brand-deep mb-12">
+
+            <div className="section-shell mt-32 w-full max-w-4xl text-left">
+                <h2 className="mb-12 text-2xl font-bold text-brand-deep md:text-3xl">
                     Trajetória Acadêmica
                 </h2>
 
-                {/* O Container da Linha do Tempo */}
-                <div className="relative border-l-2 border-brand-pink/20 ml-4 md:ml-6 flex flex-col gap-12">
+                <div className="relative ml-4 flex flex-col gap-12 border-l-2 border-brand-pink/20 md:ml-6">
                     {educationData.map((item) => (
-                        <div key={item.id} className="relative pl-8 group">
-                            <div className="
-                                /* 1. Posicionamento milimétrico em cima da linha */
-                                absolute -left-[11px] top-1.5 
-  
-                                /* 2. Tamanho e Formato */
-                                w-5 h-5 rounded-full border-2 
-  
-                                /* 3. Cores padrão (Combinando com seu index.css) */
-                                bg-[var(--bg-card)] border-brand-pink/40 transition-all duration-300
-  
-                                /* 4. Efeito de Hover (Interatividade de UI) */
-                                group-hover:border-brand-deep 
-                                group-hover:bg-brand-deep
-                                group-hover:shadow-[0_0_12px_rgba(229,56,136,0.5)]" />
+                        <div key={item.id} className="group relative pl-8">
+                            <div className="absolute -left-[11px] top-1.5 h-5 w-5 rounded-full border-2 border-brand-pink/40 bg-[var(--bg-card)] transition-all duration-300 group-hover:border-brand-deep group-hover:bg-brand-deep group-hover:shadow-[0_0_12px_rgba(229,56,136,0.5)]" />
 
                             <div className="flex flex-col gap-1 transition-all duration-300 group-hover:translate-x-1">
-                                {/* Ano / Período */}
-                                <span className="text-sm font-semibold text-brand-soft/90 tracking-wider uppercase">
+                                <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-accent)]">
                                     {item.year}
                                 </span>
 
-                                {/* Título do Curso */}
-                                <h3 className="text-xl font-bold text-main-text tracking-tight">
+                                <h3 className="text-xl font-bold tracking-tight text-[color:var(--text-page)]">
                                     {item.title}
                                 </h3>
 
-                                {/* Instituição de Ensino */}
-                                <span className="text-base font-medium text-muted-text/80">
+                                <span className="text-base font-medium text-[color:var(--text-muted)]/80">
                                     {item.institution}
                                 </span>
 
-                                {/* Descrição sutil da grade/foco */}
-                                <p className="text-muted-text text-sm leading-relaxed mt-2 max-w-2xl">
+                                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[color:var(--text-muted)]">
                                     {item.description}
                                 </p>
                             </div>
@@ -86,28 +76,25 @@ export const About = () => {
                 </div>
             </div>
 
-            {/* Seção Pilares de Atuação */}
-            <section className="w-full max-w-4xl mx-auto px-6 mt-32 text-left">
-                <h2 className="text-2xl md:text-3xl font-bold text-brand-deep mb-12">
+            <section className="section-shell mt-32 w-full max-w-4xl text-left">
+                <h2 className="mb-12 text-2xl font-bold text-brand-deep md:text-3xl">
                     Como eu transformo ideias em código
                 </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                     {pillarsData.map((pilar) => {
-                        // Guardamos a referência do ícone em uma variável com letra maiúscula
                         const IconComponent = pilar.icon;
 
                         return (
-                            <div key={pilar.id} className="flex flex-col gap-4 group text-left">
-                                {/* Renderização dinâmica com o componente */}
-                                <div className="text-muted-text group-hover:text-brand-pink transition-colors duration-300">
+                            <div key={pilar.id} className="group flex flex-col gap-4 text-left">
+                                <div className="text-[color:var(--text-muted)] transition-colors duration-300 group-hover:text-[color:var(--brand-accent)]">
                                     <IconComponent size={26} />
                                 </div>
 
-                                <h3 className="text-lg font-bold text-main-text tracking-tight group-hover:translate-x-0.5 duration-300 transition-colors group-hover:text-brand-pink">
+                                <h3 className="text-lg font-bold tracking-tight text-[color:var(--text-page)] transition-colors duration-300 group-hover:text-[color:var(--brand-accent)]">
                                     {pilar.title}
                                 </h3>
-                                <p className="text-muted-text text-sm leading-relaxed">
+                                <p className="text-sm leading-relaxed text-[color:var(--text-muted)]">
                                     {pilar.description}
                                 </p>
                             </div>
@@ -116,5 +103,5 @@ export const About = () => {
                 </div>
             </section>
         </section>
-    )
-}
+    );
+};

@@ -2,8 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Projects } from "./pages/Projects";
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
+import { Header } from "./components/Header/Header";
+import { Footer } from "./components/Footer/Footer";
 import { useEffect } from "react";
 import ReactGA from "react-ga4";
 
